@@ -8,9 +8,9 @@
         "description": "A secret key for verifying backend requests.",
         "generator": "secret"
       },
-      "WEB_CONCURRENCY": {
-        "description": "The number of processes to run.",
-        "value": "1"
+      "BASE_URL": {
+        "description": "URL for accessing backstage.",
+        "value": "https://CHANGE-ME.herokuapp.com"
       }
     },
     "formation": {
