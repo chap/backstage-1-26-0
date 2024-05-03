@@ -1,0 +1,35 @@
+{
+    "name": "Backstage - 1.26.0",
+    "keywords": [
+      "backstage"
+    ],
+    "env": {
+      "BACKEND_SECRET": {
+        "description": "A secret key for verifying backend requests.",
+        "generator": "secret"
+      },
+      "WEB_CONCURRENCY": {
+        "description": "The number of processes to run.",
+        "value": "1"
+      }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "standard-1x"
+      }
+    },
+    "addons": [
+      {
+        "plan": "heroku-postgresql"
+      }
+    ],
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      },
+      {
+        "url": "https://github.com/chap/backstage-buildpack"
+      }
+    ]
+  }
