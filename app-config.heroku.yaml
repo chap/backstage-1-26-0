@@ -1,0 +1,26 @@
+app:
+  baseUrl: .
+
+backend:
+  baseUrl: .
+  listen:
+    port:
+      $env: PORT
+
+  cors:
+    origin: .
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+
+  database:
+    client: pg
+    pluginDivisionMode: schema
+    ensureExists: false
+    connection: ${DATABASE_URL}
+    ssl:
+      require: true
+      rejectUnauthorized: false
+
+  auth:
+    keys:
+      - secret: ${BACKEND_SECRET}
